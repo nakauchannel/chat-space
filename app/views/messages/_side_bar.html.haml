@@ -1,0 +1,23 @@
+.side-bar
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        MASA
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to "#" do
+            = icon('far', 'edit', class: "side-header__box__menu__new-group__icon")
+        %li.side-header__box__menu__edit-user
+          = link_to "#" do
+            = icon('fa', 'cog', class: "side-header__box__menu__edit-user__icon")
+  .groups
+    .group
+      %p.group__group-name
+        techcamp
+      %p.group__message
+        まだメッセージがありません
+    .group
+      %p.group__group-name
+        test team
+      %p.group__message
+        まだメッセージがありません
