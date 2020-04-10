@@ -3,11 +3,13 @@
 }
 
 .wrapper {
-  display: flex;
+  margin: 0;
+  padding: 0;
 
   .side-bar {
-    height: 100vh;
+    // height: 100vh;
     width: 300px;
+    float: left;
 
     .side-header {
       background-color: $side-header-color;
@@ -75,6 +77,11 @@
       .group {
         margin-bottom: 40px;
 
+        a {
+          text-decoration: none;
+          color :$side-bar-font-color;
+        }
+
         &__group-name {
           font-size: 15px;
           color: $side-bar-font-color;
@@ -90,7 +97,8 @@
 
   .main-chat {
     height: 100vh;
-    width: 100%;
+    width: calc(100% - 300px);
+    float: left;
 
     .main-header {
       background-color: $main-header-color;
@@ -109,10 +117,16 @@
           color: #333333;
           font-size: 20px;
         }
-        &__group-member {
+        &__member-list {
           color: #999999;
           font-size: 12px;
           margin-top: 15px;
+          display: flex;
+          &__member {
+            display: inline-block;
+            padding-left: 5px;
+
+          }
         }
       }
 
@@ -169,7 +183,6 @@
 
         .input-box {
           width: 100%;
-          display: flex;
           position: relative;
 
           &__text {
@@ -178,15 +191,15 @@
             color: #434a54;
             border-style: none;
             padding: 0 40px 0 10px;
-            position: relative;
+
           }
 
           &__image {
-            cursor: pointer;
             font-size: 1.3rem;
             position: absolute;
             top: 10px;
             right: 10px;
+            cursor: pointer;
 
             &__file {
               display: none;
