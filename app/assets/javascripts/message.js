@@ -55,11 +55,13 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.submit-btn').removeAttr('disabled');
       $('form')[0].reset();
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
-    });
+    })
+    .always(function(data){
+      $('.submit-btn').removeAttr('disabled');
+    })
   })
 });
